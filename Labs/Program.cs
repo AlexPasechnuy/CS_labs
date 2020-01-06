@@ -10,7 +10,7 @@ namespace Labs
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter number of lab: ");
+            Console.Write("Enter number of lab(1-6): ");
             int num = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
             switch (num) {
