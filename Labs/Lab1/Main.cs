@@ -8,7 +8,7 @@ namespace Labs.Lab1
 {
     class Main
     {
-        public static void run() {
+        public static void Run() {
             Console.WriteLine("1. Individual Task");
             Console.WriteLine("2. Nullable types");
             Console.WriteLine("3. Quadratic equation");
@@ -22,9 +22,10 @@ namespace Labs.Lab1
                 case 1:
                     break;
                 case 2:
-                    NullTypes.run();
+                    NullTypes.Run();
                     break;
                 case 3:
+                    QuadrEq.Run();
                     break;
                 case 4:
                     break;

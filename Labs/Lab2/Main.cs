@@ -8,7 +8,7 @@ namespace Labs.Lab2
 {
     class Main
     {
-        public static void run()
+        public static void Run()
         {
         }
     }

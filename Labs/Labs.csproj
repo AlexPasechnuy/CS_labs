@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Lab1\Main.cs" />
     <Compile Include="Lab1\NullTypes.cs" />
+    <Compile Include="Lab1\QuadrEq.cs" />
     <Compile Include="Lab2\Main.cs" />
     <Compile Include="Lab3\Main.cs" />
     <Compile Include="Lab4\Main.cs" />

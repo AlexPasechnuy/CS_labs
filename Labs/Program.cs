@@ -15,22 +15,22 @@ namespace Labs
             Console.Clear();
             switch (num) {
                 case 1:
-                    Lab1.Main.run();
+                    Lab1.Main.Run();
                     break;
                 case 2:
-                    Lab2.Main.run();
+                    Lab2.Main.Run();
                     break;
                 case 3:
-                    Lab3.Main.run();
+                    Lab3.Main.Run();
                     break;
                 case 4:
-                    Lab4.Main.run();
+                    Lab4.Main.Run();
                     break;
                 case 5:
-                    Lab5.Main.run();
+                    Lab5.Main.Run();
                     break;
                 case 6:
-                    Lab6.Main.run();
+                    Lab6.Main.Run();
                     break;
                 default:
                     Console.WriteLine("Incorrect input");
