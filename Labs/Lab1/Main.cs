@@ -28,6 +28,13 @@ namespace Labs.Lab1
                     QuadrEq.Run();
                     break;
                 case 4:
+                    AdvQuadrEq eq = new AdvQuadrEq();
+                    Console.Write("Enter coeficients: ");
+                    eq.A = Convert.ToInt32(Console.ReadLine());
+                    eq.B = Convert.ToInt32(Console.ReadLine());
+                    eq.C = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(eq[1] + " " + eq[2]);
+                    Console.ReadKey();
                     break;
                 case 5:
                     break;

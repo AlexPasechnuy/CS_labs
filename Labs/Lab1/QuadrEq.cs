@@ -15,7 +15,7 @@ namespace Labs.Lab1
             int b = Convert.ToInt32(Console.ReadLine());
             int c = Convert.ToInt32(Console.ReadLine());
             int res = Solve(a, b, c, out x1, out x2);
-            Console.WriteLine(res + " roots: " + x1 + ", " + x2);
+            Console.WriteLine(res + " roots: " + x1 + " " + x2);
             Console.ReadKey();
         }
 
