@@ -37,6 +37,7 @@ namespace Labs.Lab1
                     Console.ReadKey();
                     break;
                 case 5:
+                    EvenElems.Run();
                     break;
                 default:
                     Console.WriteLine("Incorrect input");

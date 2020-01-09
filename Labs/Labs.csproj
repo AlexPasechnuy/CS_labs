@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lab1\AdvQuadrEq.cs" />
+    <Compile Include="Lab1\EvenElems.cs" />
     <Compile Include="Lab1\Main.cs" />
     <Compile Include="Lab1\NullTypes.cs" />
     <Compile Include="Lab1\QuadrEq.cs" />
