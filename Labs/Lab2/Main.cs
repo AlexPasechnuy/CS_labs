@@ -29,6 +29,7 @@ namespace Labs.Lab2
                     StringExpansion.Main.Run();
                     break;
                 case 3:
+                    MathExp.Main.Run();
                     break;
                 case 4:
                     break;
