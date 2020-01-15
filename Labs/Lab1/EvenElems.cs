@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labs.Lab1
+namespace Labs.Lab1.EvenElems
 {
-    class EvenElems
+    class Main
     {
         public static void Run()
         {

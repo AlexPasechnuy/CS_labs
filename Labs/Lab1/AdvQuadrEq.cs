@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labs.Lab1
+namespace Labs.Lab1.AdvQuadrEq
 {
     class AdvQuadrEq
     {
@@ -85,6 +85,18 @@ namespace Labs.Lab1
             }
             x2 = (-b + Math.Sqrt(d)) / (2 * a);
             return 2;
+        }
+    }
+
+    class Main {
+        public static void Run() {
+            AdvQuadrEq eq = new AdvQuadrEq();
+            Console.Write("Enter coeficients: ");
+            eq.A = Convert.ToInt32(Console.ReadLine());
+            eq.B = Convert.ToInt32(Console.ReadLine());
+            eq.C = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(eq[1] + " " + eq[2]);
+            Console.ReadKey();
         }
     }
 }

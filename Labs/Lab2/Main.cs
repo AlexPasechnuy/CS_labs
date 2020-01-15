@@ -26,6 +26,7 @@ namespace Labs.Lab2
                 case 1:
                     break;
                 case 2:
+                    StringExpansion.Main.Run();
                     break;
                 case 3:
                     break;

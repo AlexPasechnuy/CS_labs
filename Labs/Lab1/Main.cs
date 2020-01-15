@@ -22,22 +22,16 @@ namespace Labs.Lab1
                 case 1:
                     break;
                 case 2:
-                    NullTypes.Run();
+                    NullTypes.Main.Run();
                     break;
                 case 3:
-                    QuadrEq.Run();
+                    QuadrEq.Main.Run();
                     break;
                 case 4:
-                    AdvQuadrEq eq = new AdvQuadrEq();
-                    Console.Write("Enter coeficients: ");
-                    eq.A = Convert.ToInt32(Console.ReadLine());
-                    eq.B = Convert.ToInt32(Console.ReadLine());
-                    eq.C = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(eq[1] + " " + eq[2]);
-                    Console.ReadKey();
+                    AdvQuadrEq.Main.Run();
                     break;
                 case 5:
-                    EvenElems.Run();
+                    EvenElems.Main.Run();
                     break;
                 default:
                     Console.WriteLine("Incorrect input");

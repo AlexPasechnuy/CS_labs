@@ -5,3 +5,10 @@ C:\Users\User\Desktop\Labs\Labs\bin\Debug\Labs.exe
 C:\Users\User\Desktop\Labs\Labs\bin\Debug\Labs.pdb
 C:\Users\User\Desktop\Labs\Labs\obj\Debug\Labs.exe
 C:\Users\User\Desktop\Labs\Labs\obj\Debug\Labs.pdb
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\bin\Debug\Labs.exe.config
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\bin\Debug\Labs.exe
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\bin\Debug\Labs.pdb
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\obj\Debug\Labs.csprojAssemblyReference.cache
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\obj\Debug\Labs.csproj.CoreCompileInputs.cache
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\obj\Debug\Labs.exe
+D:\Alex\Documents\1.University\Programming\C#\CS_labs\Labs\obj\Debug\Labs.pdb
