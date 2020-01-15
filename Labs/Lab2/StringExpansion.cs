@@ -8,8 +8,10 @@ namespace Labs.Lab2.StringExpansion
 {
     public static class StringExpansion
     {
-        public static string RemRedSpaces(this string str) {
-            for (int i = 0; i < str.Length - 1; i++) {
+        public static string RemRedSpaces(this string str)
+        {
+            for (int i = 0; i < str.Length - 1; i++)
+            {
                 if (str[i] == ' ' && str[i + 1] == ' ')
                 {
                     str = str.Remove(i, 1);
@@ -22,7 +24,8 @@ namespace Labs.Lab2.StringExpansion
 
     class Main
     {
-        public static void Run() {
+        public static void Run()
+        {
             Console.WriteLine("ads     qwe  ads ".RemRedSpaces() + ";");
             Console.ReadKey();
         }

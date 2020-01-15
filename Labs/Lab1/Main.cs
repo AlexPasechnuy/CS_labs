@@ -8,7 +8,8 @@ namespace Labs.Lab1
 {
     class Main
     {
-        public static void Run() {
+        public static void Run()
+        {
             while (true)
             {
                 Console.Clear();

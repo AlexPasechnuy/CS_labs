@@ -88,8 +88,10 @@ namespace Labs.Lab1.AdvQuadrEq
         }
     }
 
-    class Main {
-        public static void Run() {
+    class Main
+    {
+        public static void Run()
+        {
             AdvQuadrEq eq = new AdvQuadrEq();
             Console.Write("Enter coeficients: ");
             eq.A = Convert.ToInt32(Console.ReadLine());

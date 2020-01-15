@@ -8,16 +8,19 @@ namespace Labs.Lab1.NullTypes
 {
     class NullTypes
     {
-        public static double? Sqrt(double num) {
+        public static double? Sqrt(double num)
+        {
             double? res = null;
-            if (num >= 0) {
+            if (num >= 0)
+            {
                 res = Math.Sqrt(num);
             }
             return res;
         }
     }
 
-    class Main {
+    class Main
+    {
         public static void Run()
         {
             Console.WriteLine("Input number: ");

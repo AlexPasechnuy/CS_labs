@@ -8,7 +8,8 @@ namespace Labs.Lab2.MathExp
 {
     class MathExp
     {
-        public static uint? CycFibo(int num) {
+        public static uint? CycFibo(int num)
+        {
             if (num < 1)
             {
                 return null;
@@ -17,7 +18,8 @@ namespace Labs.Lab2.MathExp
             if (num > 2) {
                 uint prev, prevprev;
                 prev = prevprev = 1;
-                for (int i = 3; i <= num; i++) {
+                for (int i = 3; i <= num; i++)
+                {
                     res = prevprev + prev;
                     prevprev = prev;
                     prev = res;
@@ -28,18 +30,22 @@ namespace Labs.Lab2.MathExp
 
         public static uint? RecFibo(int num)
         {
-            if (num < 1) {
+            if (num < 1)
+            {
                 return null;
             }
-            if (num <= 2) {
+            if (num <= 2)
+            {
                 return 1;
             }
             return RecFibo(num - 2) + RecFibo(num - 1);
         }
     }
 
-    class Main {
-        public static void Run() {
+    class Main
+    {
+        public static void Run()
+        {
             Console.Write("Enter number: ");
             int num = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Using cycle: " + MathExp.CycFibo(num));
