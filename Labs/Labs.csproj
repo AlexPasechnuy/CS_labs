@@ -47,6 +47,7 @@
     <Compile Include="Lab1\Main.cs" />
     <Compile Include="Lab1\NullTypes.cs" />
     <Compile Include="Lab1\QuadrEq.cs" />
+    <Compile Include="Lab2\ComplexNum.cs" />
     <Compile Include="Lab2\Main.cs" />
     <Compile Include="Lab2\MathExp.cs" />
     <Compile Include="Lab2\StringExpansion.cs" />

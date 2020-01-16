@@ -35,6 +35,7 @@ namespace Labs.Lab2
                         MathExp.Main.Run();
                         break;
                     case 4:
+                        ComplexNum.Main.Run();
                         break;
                     case 5:
                         break;
