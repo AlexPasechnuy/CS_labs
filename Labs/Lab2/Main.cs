@@ -38,6 +38,7 @@ namespace Labs.Lab2
                         ComplexNum.Main.Run();
                         break;
                     case 5:
+                        Vector.Main.Run();
                         break;
                     case -1:
                         return;
