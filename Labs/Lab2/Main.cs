@@ -40,6 +40,9 @@ namespace Labs.Lab2
                     case 5:
                         Vector.Main.Run();
                         break;
+                    case 6:
+                        Hierarchy.Main.Run();
+                        break;
                     case -1:
                         return;
                     default:
