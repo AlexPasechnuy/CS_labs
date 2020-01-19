@@ -43,6 +43,12 @@ namespace Labs.Lab2
                     case 6:
                         Hierarchy.Main.Run();
                         break;
+                    case 7:
+
+                        break;
+                    case 8:
+                        Point3D.Main.Run();
+                        break;
                     case -1:
                         return;
                     default:

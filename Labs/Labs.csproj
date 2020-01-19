@@ -52,6 +52,7 @@
     <Compile Include="Lab2\Main.cs" />
     <Compile Include="Lab2\MathExp.cs" />
     <Compile Include="Lab2\StringExpansion.cs" />
+    <Compile Include="Lab2\Point3D.cs" />
     <Compile Include="Lab2\Vector.cs" />
     <Compile Include="Lab3\Main.cs" />
     <Compile Include="Lab4\Main.cs" />
