@@ -44,7 +44,7 @@ namespace Labs.Lab2
                         Hierarchy.Main.Run();
                         break;
                     case 7:
-
+                        Equation.Main.Run();
                         break;
                     case 8:
                         Point3D.Main.Run();
