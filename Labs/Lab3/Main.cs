@@ -32,6 +32,7 @@ namespace Labs.Lab3
                         TextFiles.Main.Run();
                         break;
                     case 3:
+                        Serial.Main.Run();
                         break;
                     case 4:
                         break;

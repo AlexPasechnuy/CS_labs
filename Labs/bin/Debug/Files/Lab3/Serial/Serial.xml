@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Students>
+    <Student>
+      <Name>Alexey</Name>
+      <Surname>Panin</Surname>
+      <RecBookNum>2362179</RecBookNum>
+      <EnrollYear>2017</EnrollYear>
+    </Student>
+    <Student>
+      <Name>Viktor</Name>
+      <Surname>Reznov</Surname>
+      <RecBookNum>2362179</RecBookNum>
+      <EnrollYear>2017</EnrollYear>
+    </Student>
+    <Student>
+      <Name>Nikolay</Name>
+      <Surname>Shevtsov</Surname>
+      <RecBookNum>7319654</RecBookNum>
+      <EnrollYear>2017</EnrollYear>
+    </Student>
+    <Student>
+      <Name>Sergey</Name>
+      <Surname>Bunin</Surname>
+      <RecBookNum>1365075</RecBookNum>
+      <EnrollYear>2017</EnrollYear>
+    </Student>
+  </Students>
+  <Name>KN218g</Name>
+</Group>
