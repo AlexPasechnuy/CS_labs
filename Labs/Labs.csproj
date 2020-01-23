@@ -55,7 +55,14 @@
     <Compile Include="Lab2\StringExpansion.cs" />
     <Compile Include="Lab2\Point3D.cs" />
     <Compile Include="Lab2\Vector.cs" />
+    <Compile Include="Lab3\AssocArr.cs" />
+    <Compile Include="Lab3\Container.cs" />
+    <Compile Include="Lab3\FlexArr.cs" />
+    <Compile Include="Lab3\GenLib.cs" />
     <Compile Include="Lab3\Main.cs" />
+    <Compile Include="Lab3\Serial.cs" />
+    <Compile Include="Lab3\Set.cs" />
+    <Compile Include="Lab3\TextFiles.cs" />
     <Compile Include="Lab4\Main.cs" />
     <Compile Include="Lab5\Main.cs" />
     <Compile Include="Lab6\Main.cs" />
