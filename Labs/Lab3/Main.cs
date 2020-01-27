@@ -35,6 +35,7 @@ namespace Labs.Lab3
                         Serial.Main.Run();
                         break;
                     case 4:
+                        GenLib.Main.Run();
                         break;
                     case 5:
                         break;
