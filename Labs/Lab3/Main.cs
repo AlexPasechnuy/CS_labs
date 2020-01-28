@@ -38,6 +38,7 @@ namespace Labs.Lab3
                         GenLib.Main.Run();
                         break;
                     case 5:
+                        Container.Main.Run();
                         break;
                     case 6:
                         break;

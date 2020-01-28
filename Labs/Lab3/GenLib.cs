@@ -98,7 +98,7 @@ namespace Labs.Lab3.GenLib
             {
                 Console.WriteLine("\n--Double:\n");
                 double[] arr1 = { 0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2, 8.2, 9.2 };
-                double[] arr2 = { 10.2, 11.2, 12.2, 13.2, 14.2, 15.2, 16.2, 17.2, 18.2, 19.2};
+                double[] arr2 = { 10.2, 11.2, 12.2, 13.2, 14.2, 15.2, 16.2, 17.2, 18.2, 19.2 };
                 Console.Write("First array: ");
                 GenLib.Print(arr1);
                 Console.Write("Second array: ");
@@ -119,7 +119,7 @@ namespace Labs.Lab3.GenLib
             /////////////////////////////////////
             {
                 Console.WriteLine("\n--Characters:\n");
-                char[] arr1 = {'a','b','c','d','e','f','g','h','i','j' };
+                char[] arr1 = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
                 char[] arr2 = { 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't' };
                 Console.Write("First array: ");
                 GenLib.Print(arr1);
