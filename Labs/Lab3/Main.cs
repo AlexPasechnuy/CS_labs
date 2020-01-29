@@ -41,6 +41,7 @@ namespace Labs.Lab3
                         Container.Main.Run();
                         break;
                     case 6:
+                        Set.Main.Run();
                         break;
                     case 7:
                         break;
