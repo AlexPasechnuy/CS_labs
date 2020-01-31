@@ -42,6 +42,7 @@ namespace Labs.Lab3
                             Set.Main.Run();
                             break;
                         case 7:
+                            AssocArr.Main.Run();
                             break;
                         case 8:
                             break;
