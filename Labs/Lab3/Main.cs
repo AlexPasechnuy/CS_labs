@@ -45,6 +45,7 @@ namespace Labs.Lab3
                             AssocArr.Main.Run();
                             break;
                         case 8:
+                            FlexArr.Main.Run();
                             break;
                         case -1:
                             return;
