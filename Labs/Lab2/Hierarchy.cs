@@ -11,11 +11,11 @@ namespace Labs.Lab2.Hierarchy
         private string name, surname, gender;
         private DateTime birthDate;
 
-        public Person(string name, string surname, string gender, string birthDate) {
+        public Person(string name, string surname, string gender, DateTime birthDate) {
             this.name = name;
             this.surname = surname;
             this.gender = gender;
-            this.birthDate = DateTime.Parse(birthDate);
+            this.birthDate = birthDate;
         }
 
         public int getAge()
@@ -38,7 +38,7 @@ namespace Labs.Lab2.Hierarchy
     {
         string country;
 
-        public Citizen(string name, string surname, string gender, string birthDate, 
+        public Citizen(string name, string surname, string gender, DateTime birthDate, 
             string country)
             : base(name, surname, gender, birthDate)
         {
@@ -57,7 +57,7 @@ namespace Labs.Lab2.Hierarchy
         string group;
         int enrollYear;
 
-        public Student(string name, string surname, string gender, string birthDate, string country,
+        public Student(string name, string surname, string gender, DateTime birthDate, string country,
             string university, string group, int enrollYear) : base(name, surname, gender, birthDate, country)
         {
             this.university = university;
@@ -89,7 +89,7 @@ namespace Labs.Lab2.Hierarchy
         string position;
         DateTime enrollDate;
 
-        public Employee(string name, string surname, string gender, string birthDate,
+        public Employee(string name, string surname, string gender, DateTime birthDate,
             string country,
             string company, string position, string enrollDate)
             : base(name, surname, gender, birthDate, country)
@@ -121,11 +121,11 @@ namespace Labs.Lab2.Hierarchy
         public static void Run()
         {
             Person[] group = new Person[4];
-            group[0] = new Person("Vasya", "Pupkin", "Male", "22.11.1990");
-            group[1] = new Citizen("Alex", "Pushkin", "Male", "06.06.1799", "Russia");
-            group[2] = new Student("Olga", "Volochkova", "Female", "14.05.2001", "Ukraine", 
+            group[0] = new Person("Vasya", "Pupkin", "Male", DateTime.Parse("22.11.1990"));
+            group[1] = new Citizen("Alex", "Pushkin", "Male", DateTime.Parse("06.06.1799"), "Russia");
+            group[2] = new Student("Olga", "Volochkova", "Female", DateTime.Parse("14.05.2001"), "Ukraine", 
                 "NTU \"KhPi\"", "1.KN218.ge" ,  2018);
-            group[3] = new Employee("Alexandra", "Kapustina", "Female", "29.08.1990", "Ukraine",
+            group[3] = new Employee("Alexandra", "Kapustina", "Female", DateTime.Parse("29.08.1990"), "Ukraine",
     "NIX Solutions", "Senior C++ Developer" , "23.08.2010");
             for (int i = 0; i < group.Length; i++)
             {

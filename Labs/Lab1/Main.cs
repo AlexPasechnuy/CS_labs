@@ -26,6 +26,7 @@ namespace Labs.Lab1
                     switch (num)
                     {
                         case 1:
+                            IndTask.Main.Run();
                             break;
                         case 2:
                             NullTypes.Main.Run();
