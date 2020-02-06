@@ -23,11 +23,11 @@ namespace Labs.Lab1.NullTypes
     {
         public static void Run()
         {
-            Console.WriteLine("Input number: ");
+            Console.Write("Input number: ");
             int num = Convert.ToInt32(Console.ReadLine());
             double? res = NullTypes.Sqrt(num);
-            if (res == null) { Console.Write("null"); }
-            else { Console.Write(res); }
+            if (res == null) { Console.Write("No square root"); }
+            else { Console.Write("Square root is " + res); }
             Console.ReadKey();
         }
     }

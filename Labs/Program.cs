@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Labs
 {
@@ -12,11 +8,10 @@ namespace Labs
         {
             while (true)
             {
-                try
+                Console.Clear();
+                Console.Write("Enter number of lab(1-6)('-1' to quit): ");
+                if (int.TryParse(Console.ReadLine(), out int num))
                 {
-                    Console.Clear();
-                    Console.Write("Enter number of lab(1-6)('-1' to quit): ");
-                    int num = Convert.ToInt32(Console.ReadLine());
                     switch (num)
                     {
                         case 1:
@@ -40,13 +35,8 @@ namespace Labs
                         case -1:
                             return;
                         default:
-                            Console.WriteLine("Incorrect input");
-                            Console.ReadKey();
                             break;
                     }
-                }
-                catch (System.FormatException)
-                {
                 }
             }
         }

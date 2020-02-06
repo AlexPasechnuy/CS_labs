@@ -8,8 +8,7 @@ namespace Labs.Lab1.IndTask
 {
     class Group
     {
-        string name;
-        Artist[] members = new Artist[0];
+        private Artist[] members = new Artist[0];
 
         public Artist this[int index]
         {
@@ -40,11 +39,7 @@ namespace Labs.Lab1.IndTask
             }
         }
 
-        public string Name
-        {
-            set { name = value; }
-            get { return name; }
-        }
+        public string Name { set; get; }
 
         public void Add(Artist artist)
         {
@@ -54,12 +49,12 @@ namespace Labs.Lab1.IndTask
 
         public Group(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
 
         public override string ToString()
         {
-            string res = name + ":\nArtists\n";
+            string res = Name + ":\nArtists\n";
             foreach (Artist art in members)
             {
                 res += art.ToString() + "\n";
@@ -70,33 +65,15 @@ namespace Labs.Lab1.IndTask
 
     class Artist
     {
-        private string name, surname, role;
-        private Country homeland;
         private int enrollYear;
 
-        public string Name
-        {
-            set { name = value; }
-            get { return name; }
-        }
+        public string Name { set; get; }
 
-        public string Surname
-        {
-            set { surname = value; }
-            get { return surname; }
-        }
+        public string Surname { set; get; }
 
-        public string Role
-        {
-            set { role = value; }
-            get { return role; }
-        }
+        public string Role { set; get; }
 
-        public Country Homeland
-        {
-            set { homeland = value; }
-            get { return homeland; }
-        }
+        public Country Homeland { set; get; }
 
         public int EnrollYear
         {
@@ -117,63 +94,42 @@ namespace Labs.Lab1.IndTask
 
         public Artist(string name, string surname, string role, Country homeland, int enrollYear)
         {
-            this.name = name;
-            this.surname = surname;
-            this.role = role;
-            this.homeland = homeland;
+            this.Name = name;
+            this.Surname = surname;
+            this.Role = role;
+            this.Homeland = homeland;
             this.enrollYear = enrollYear;
         }
 
         public override string ToString()
         {
-            return "  " + name + " " + surname + ", " + role + ", enrolled in " + enrollYear
-                + "\nCountry: " + homeland.ToString(); 
+            return "  " + Name + " " + Surname + ", " + Role + ", enrolled in " + enrollYear
+                + "\nCountry: " + Homeland.ToString(); 
         }
     }
 
     class Country
     {
-        private string name;
-        private int population;
-        private int area;
-        private string mainland;
+        public string Name { set; get; }
 
-        public string Name
-        {
-            set { name = value; }
-            get { return name; }
-        }
+        public int Population { set; get; }
 
-        public int Population
-        {
-            set{ population = value; }
-            get{ return population; }
-        }
+        public int Area { set; get; }
 
-        public int Area
-        {
-            set { area = value; }
-            get { return area; }
-        }
-
-        public string Mainland
-        {
-            set { mainland = value; }
-            get { return mainland; }
-        }
+        public string Mainland { set; get; }
 
         public Country(string name, int population, int area, string mainland)
         {
-            this.name = name;
-            this.population = population;
-            this.area = area;
-            this.mainland = mainland;
+            this.Name = name;
+            this.Population = population;
+            this.Area = area;
+            this.Mainland = mainland;
         }
 
         public override string ToString()
         {
-            return name + "; Population: " + population + 
-                "; Area: " + area + "; Mainland: " + mainland;
+            return Name + "; Population: " + Population + 
+                "; Area: " + Area + "; Mainland: " + Mainland;
         }
     }
 
@@ -192,7 +148,7 @@ namespace Labs.Lab1.IndTask
             ACDC.Add(new Artist("Angus", "Young", "Guitarist", Scotl, 1973));
             ACDC.Add(new Artist("Stevie", "Young", "Rhytm-guitar", USA, 1988));
             ACDC.Add(new Artist("Chris", "Slade", "Drums", GB, 1988));
-
+            
             //group output
             Console.WriteLine(ACDC);
 

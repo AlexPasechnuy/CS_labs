@@ -36,12 +36,19 @@ namespace Labs.Lab1.QuadrEq
         public static void Run()
         {
             double? x1, x2;
+            double a, b, c;
             Console.Write("Enter coeficients: ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
-            int c = Convert.ToInt32(Console.ReadLine());
-            int res = QuadrEq.Solve(a, b, c, out x1, out x2);
-            Console.WriteLine(res + " roots: " + x1 + " " + x2);
+            string[] str = Console.ReadLine().Split();
+            if (double.TryParse(str[0], out a) == true && double.TryParse(str[1], out b) == true
+                && double.TryParse(str[2], out c) == true)
+            {
+                int res = QuadrEq.Solve(a, b, c, out x1, out x2);
+                Console.WriteLine(res + " roots: " + x1 + " " + x2);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input");
+            }
             Console.ReadKey();
         }
     }

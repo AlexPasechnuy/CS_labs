@@ -8,8 +8,6 @@ namespace Labs.Lab1.AdvQuadrEq
 {
     class AdvQuadrEq
     {
-        private double a, b, c;
-        private double? x1, x2;
 
         public double? this[int index]
         {
@@ -24,66 +22,34 @@ namespace Labs.Lab1.AdvQuadrEq
             }
         }
 
-        public double? X1
-        {
-            get
-            {
-                Solve();
-                return x1;
-            }
-        }
+        public double? X1 { get; private set; }
 
-        public double? X2
-        {
-            get
-            {
-                Solve();
-                return x2;
-            }
-        }
+        public double? X2 { get; private set; }
 
-        public double A
-        {
-            set
-            {
-                a = value;
-            }
-        }
+        public double A { get; set; }
 
-        public double B
-        {
-            set
-            {
-                b = value;
-            }
-        }
+        public double B { get; set; }
 
-        public double C
-        {
-            set
-            {
-                c = value;
-            }
-        }
+        public double C { get; set; }
 
-        private int Solve()
+        public int Solve()
         {
-            x1 = x2 = null;
-            if (a == 0 && b == 0 && c == 0)
+            X1 = X2 = null;
+            if (A == 0 && B == 0 && C == 0)
             {
                 return -1;
             }
-            double d = b * b - 4 * a * c;
+            double d = B * B - 4 * A * C;
             if (d < 0)
             {
                 return 0;
             }
-            x1 = (-b - Math.Sqrt(d)) / (2 * a);
+            X1 = (-B - Math.Sqrt(d)) / (2 * A);
             if (d == 0)
             {
                 return 1;
             }
-            x2 = (-b + Math.Sqrt(d)) / (2 * a);
+            X2 = (-B + Math.Sqrt(d)) / (2 * A);
             return 2;
         }
     }
@@ -94,9 +60,11 @@ namespace Labs.Lab1.AdvQuadrEq
         {
             AdvQuadrEq eq = new AdvQuadrEq();
             Console.Write("Enter coeficients: ");
-            eq.A = Convert.ToInt32(Console.ReadLine());
-            eq.B = Convert.ToInt32(Console.ReadLine());
-            eq.C = Convert.ToInt32(Console.ReadLine());
+            string[] str = Console.ReadLine().Split();
+            eq.A = Convert.ToInt32(str[0]);
+            eq.B = Convert.ToInt32(str[1]);
+            eq.C = Convert.ToInt32(str[2]);
+            eq.Solve();
             Console.WriteLine(eq[1] + " " + eq[2]);
             Console.ReadKey();
         }

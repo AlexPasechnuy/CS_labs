@@ -26,7 +26,7 @@ namespace Labs.Lab2.StringExpansion
     {
         public static void Run()
         {
-            Console.WriteLine("ads     qwe  ads ".RemRedSpaces() + ";");
+            Console.WriteLine("Hello    World   !  !    !   ".RemRedSpaces() + ";");
             Console.ReadKey();
         }
     }

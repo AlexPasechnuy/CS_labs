@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Labs.Lab4
 {
@@ -12,17 +8,16 @@ namespace Labs.Lab4
         {
             while (true)
             {
-                try
+                Console.Clear();
+                Console.WriteLine("1. Individual task");
+                Console.WriteLine("2. Use dynamic data type");
+                Console.WriteLine("3. Working with the File System");
+                Console.WriteLine("4. Working with Delegates");
+                Console.WriteLine("5. Working with Menus and Data Tables");
+                Console.WriteLine("6. The Use of Graphics Features (Advanced Task)");
+                Console.WriteLine("Input number of task('-1' to return): ");
+                if (int.TryParse(Console.ReadLine(), out int num))
                 {
-                    Console.Clear();
-                    Console.WriteLine("1. Individual task");
-                    Console.WriteLine("2. Use dynamic data type");
-                    Console.WriteLine("3. Working with the File System");
-                    Console.WriteLine("4. Working with Delegates");
-                    Console.WriteLine("5. Working with Menus and Data Tables");
-                    Console.WriteLine("6. The Use of Graphics Features (Advanced Task)");
-                    Console.WriteLine("Input number of task('-1' to return): ");
-                    int num = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     switch (num)
                     {
@@ -44,9 +39,6 @@ namespace Labs.Lab4
                         default:
                             break;
                     }
-                }
-                catch (System.FormatException)
-                {
                 }
             }
         }
