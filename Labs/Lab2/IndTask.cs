@@ -78,6 +78,12 @@ namespace Labs.Lab2.IndTask
             }
             return res;
         }
+
+        public override bool Equals(object obj)
+        {
+            CreativeTeam team = obj as CreativeTeam;
+            return team.direction == direction && team.Name == Name;
+        }
     }
 
     class Group : CreativeTeam
@@ -87,7 +93,6 @@ namespace Labs.Lab2.IndTask
 
     class Artist
     {
-        private int enrollYear;
 
         public string Name { set; get; }
 
@@ -101,7 +106,7 @@ namespace Labs.Lab2.IndTask
 
         public int getExp()
         {
-            string enrollString = "01.01." + enrollYear;
+            string enrollString = "01.01." + EnrollYear;
             DateTime enrollDate = DateTime.Parse(enrollString);
             DateTime today = DateTime.Today;
             int years = today.Year - enrollDate.Year;
@@ -116,13 +121,20 @@ namespace Labs.Lab2.IndTask
             Surname = surname;
             Role = role;
             Homeland = homeland;
-            this.enrollYear = enrollYear;
+            EnrollYear = enrollYear;
         }
 
         public override string ToString()
         {
-            return "  " + Name + " " + Surname + ", " + Role + ", enrolled in " + enrollYear
+            return "  " + Name + " " + Surname + ", " + Role + ", enrolled in " + EnrollYear
                 + "\nCountry: " + Homeland.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            Artist artist = obj as Artist;
+            return artist.Name == Name && artist.Surname == Surname
+                && artist.Role == Role && artist.Homeland == Homeland
+                && artist.EnrollYear == EnrollYear;
         }
     }
 
@@ -149,6 +161,12 @@ namespace Labs.Lab2.IndTask
             return Name + "; Population: " + Population +
                 "; Area: " + Area + "; Mainland: " + Mainland;
         }
+
+        public override bool Equals(object obj)
+        {
+            Country country = obj as Country;
+            return country.Name == Name;
+        }
     }
 
     class Main
@@ -163,6 +181,7 @@ namespace Labs.Lab2.IndTask
             //group initialization
             Artist Axi = new Artist("Axi", "Rose", "Soloist", USA, 2016);
 
+            //addition of artists using '+' operator
             CreativeTeam ACDC = new Group("AC/DC");
             ACDC += Axi;
             ACDC += new Artist("Angus", "Young", "Guitarist", Scotl, 1973);
@@ -191,6 +210,7 @@ namespace Labs.Lab2.IndTask
                 }
             }
 
+            //Test of '-' operator
             Console.WriteLine("\n\nAfter Axi deleting: ");
             ACDC -= Axi;
             Console.WriteLine(ACDC);

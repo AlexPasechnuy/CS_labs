@@ -49,7 +49,7 @@ namespace Labs.Lab1.IndTask
 
         public Group(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         public override string ToString()
@@ -94,10 +94,10 @@ namespace Labs.Lab1.IndTask
 
         public Artist(string name, string surname, string role, Country homeland, int enrollYear)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Role = role;
-            this.Homeland = homeland;
+            Name = name;
+            Surname = surname;
+            Role = role;
+            Homeland = homeland;
             this.enrollYear = enrollYear;
         }
 
