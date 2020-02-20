@@ -255,6 +255,15 @@ namespace Labs.Lab2.IndTask
                 }
             }
 
+            Console.WriteLine("\n\nArtists with names started by \"A\":");
+            foreach (Artist art in ACDC)
+            {
+                if (art.Name.IndexOf("A") == 0)
+                {
+                    Console.WriteLine(art);
+                }
+            }
+
             //Test of '-' operator
             Console.WriteLine("\n\nAfter Axi deleting: ");
             ACDC -= Axi;
