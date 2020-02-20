@@ -21,11 +21,11 @@ namespace Labs.Lab1.AdvQuadrEq
                 }
             }
         }
-
+        //roots
         public double? X1 { get; private set; }
 
         public double? X2 { get; private set; }
-
+        //coefficients
         public double A { get; set; }
 
         public double B { get; set; }

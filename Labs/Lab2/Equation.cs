@@ -6,31 +6,6 @@ using System.Threading.Tasks;
 
 namespace Labs.Lab2.Equation
 {
-    class Main
-    {
-        public static void Run()
-        {
-            Abstract.MyEq abs = new Abstract.MyEq();
-            Interface.MyEq inter = new Interface.MyEq();
-            Console.WriteLine(abs.Solve(-0.6));
-            double[] absRes = abs.FindRoots(-10,10,0.1);
-            double[] interRes = inter.FindRoots(-10, 10, 0.1);
-            Console.WriteLine("Using abstract class: ");
-            for (int i = 0; i < absRes.Length; i++)
-            {
-                Console.Write(absRes[i] + " ");
-            }
-
-            Console.WriteLine("\n\nUsing interface: ");
-            for (int i = 0; i < interRes.Length; i++)
-            {
-                Console.Write(interRes[i] + " ");
-            }
-
-            Console.ReadKey();
-        }
-    }
-
     namespace Abstract
     {
         abstract class Equation
@@ -118,4 +93,30 @@ namespace Labs.Lab2.Equation
             }
         }
     }
+
+    class Main
+    {
+        public static void Run()
+        {
+            Abstract.MyEq abs = new Abstract.MyEq();
+            Interface.MyEq inter = new Interface.MyEq();
+            Console.WriteLine(abs.Solve(-0.6));
+            double[] absRes = abs.FindRoots(-10, 10, 0.1);
+            double[] interRes = inter.FindRoots(-10, 10, 0.1);
+            Console.WriteLine("Using abstract class: ");
+            for (int i = 0; i < absRes.Length; i++)
+            {
+                Console.Write(absRes[i] + " ");
+            }
+
+            Console.WriteLine("\n\nUsing interface: ");
+            for (int i = 0; i < interRes.Length; i++)
+            {
+                Console.Write(interRes[i] + " ");
+            }
+
+            Console.ReadKey();
+        }
+    }
+
 }

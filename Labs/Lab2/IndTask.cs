@@ -11,7 +11,7 @@ namespace Labs.Lab2.IndTask
         private string direction;
         private Artist[] members = new Artist[0];
 
-        public Artist this[int index]
+        public Artist this[int index]   //indexer
         {
             set
             {
@@ -33,7 +33,7 @@ namespace Labs.Lab2.IndTask
             }
         }
 
-        public IEnumerator<Artist> GetEnumerator()
+        public IEnumerator<Artist> GetEnumerator()  //enumerator
         {
             foreach (Artist x in members)
             {
@@ -43,12 +43,12 @@ namespace Labs.Lab2.IndTask
 
         public string Name { set; get; }
 
-        public int Length
+        public int Length   //property for number of group members
         {
             get { return members.Length; }
         }
         
-        public static CreativeTeam operator+(CreativeTeam gr, Artist ar)
+        public static CreativeTeam operator+(CreativeTeam gr, Artist ar)    //adding artist to the group
         {
             CreativeTeam res = gr;
             Array.Resize(ref res.members, res.members.Length + 1);
@@ -56,7 +56,7 @@ namespace Labs.Lab2.IndTask
             return res;
         }
 
-        public static CreativeTeam operator -(CreativeTeam gr, Artist art)
+        public static CreativeTeam operator -(CreativeTeam gr, Artist art)  //deleting artist from group
         {
             CreativeTeam res = gr;
             res.members = gr.members.Where(val => val != art).ToArray();
@@ -74,7 +74,7 @@ namespace Labs.Lab2.IndTask
             string res = Name + ":\nArtists\n";
             foreach (Artist art in members)
             {
-                res += art.ToString() + "\n";
+                res += " -- " + art.ToString() + "\n";
             }
             return res;
         }
@@ -93,18 +93,17 @@ namespace Labs.Lab2.IndTask
 
     class Artist
     {
-
         public string Name { set; get; }
 
         public string Surname { set; get; }
 
-        public string Role { set; get; }
+        public MusicRole Role { set; get; }
 
         public Country Homeland { set; get; }
 
         public int EnrollYear { set; get; }
 
-        public int getExp()
+        public int GetExp()     //show years since enrollment to the group
         {
             string enrollString = "01.01." + EnrollYear;
             DateTime enrollDate = DateTime.Parse(enrollString);
@@ -115,7 +114,7 @@ namespace Labs.Lab2.IndTask
             return ++years;
         }
 
-        public Artist(string name, string surname, string role, Country homeland, int enrollYear)
+        public Artist(string name, string surname, MusicRole role, Country homeland, int enrollYear)
         {
             Name = name;
             Surname = surname;
@@ -133,7 +132,7 @@ namespace Labs.Lab2.IndTask
         {
             Artist artist = obj as Artist;
             return artist.Name == Name && artist.Surname == Surname
-                && artist.Role == Role && artist.Homeland == Homeland
+                && artist.Role.Equals(Role) && artist.Homeland == Homeland
                 && artist.EnrollYear == EnrollYear;
         }
     }
@@ -146,9 +145,9 @@ namespace Labs.Lab2.IndTask
 
         public int Area { set; get; }
 
-        public string Mainland { set; get; }
+        public Mainland Mainland { set; get; }
 
-        public Country(string name, int population, int area, string mainland)
+        public Country(string name, int population, int area, Mainland mainland)
         {
             Name = name;
             Population = population;
@@ -169,24 +168,70 @@ namespace Labs.Lab2.IndTask
         }
     }
 
+    public struct Mainland
+    {
+        public string Name;
+        public long Area;
+
+        // Definition of the equivalence
+        public override bool Equals(object obj)
+        {
+            Mainland land = (Mainland)obj;
+            return land.Name == Name && land.Area == Area;
+        }
+
+        // Definition of string representation:
+        public override string ToString()
+        {
+            return Name + ", " + Area + " square kilemeters";
+        }
+    }
+
+    public struct MusicRole
+    {
+        public string Role;
+
+        // Definition of the equivalence
+        public override bool Equals(object obj)
+        {
+            MusicRole role = (MusicRole)obj;
+            return role.Role == Role;
+        }
+
+        // Definition of string representation:
+        public override string ToString()
+        {
+            return Role;
+        }
+    }
+
     class Main
     {
         public static void Run()
         {
+            //mainlands creating
+            Mainland Europe = new Mainland() { Name = "Europe", Area = 10180000 };
+            Mainland NorthAm = new Mainland() { Name = "North America", Area = 24710000 };
+
+            //roles creating
+            MusicRole soloist = new MusicRole() { Role = "Soloist" };
+            MusicRole drummer = new MusicRole() { Role = "Drummer" };
+            MusicRole guitarist = new MusicRole() { Role = "Guitarisr" };
+
             //countries creating
-            Country USA = new Country("United States of America", 328239523, 9833520, "North America");
-            Country GB = new Country("Great Britain", 63786000, 209331, "Europe");
-            Country Scotl = new Country("Scotland", 5424800, 77933, "Europe");
+            Country USA = new Country("United States of America", 328239523, 9833520, NorthAm);
+            Country GB = new Country("Great Britain", 63786000, 209331, Europe);
+            Country Scotl = new Country("Scotland", 5424800, 77933, Europe);
 
             //group initialization
-            Artist Axi = new Artist("Axi", "Rose", "Soloist", USA, 2016);
+            CreativeTeam ACDC = new Group("AC/DC");
 
             //addition of artists using '+' operator
-            CreativeTeam ACDC = new Group("AC/DC");
+            Artist Axi = new Artist("Axi", "Rose", soloist, USA, 2016);
             ACDC += Axi;
-            ACDC += new Artist("Angus", "Young", "Guitarist", Scotl, 1973);
-            ACDC += new Artist("Stevie", "Young", "Rhytm-guitar", USA, 1988);
-            ACDC += new Artist("Chris", "Slade", "Drums", GB, 1988);
+            ACDC += new Artist("Angus", "Young", guitarist, Scotl, 1973);
+            ACDC += new Artist("Stevie", "Young", guitarist, USA, 1988);
+            ACDC += new Artist("Chris", "Slade", drummer, GB, 1988);
 
             //group output
             Console.WriteLine(ACDC);

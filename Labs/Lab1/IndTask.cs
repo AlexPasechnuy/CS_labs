@@ -8,9 +8,15 @@ namespace Labs.Lab1.IndTask
 {
     class Group
     {
+        public string Name { set; get; }
         private Artist[] members = new Artist[0];
 
-        public Artist this[int index]
+        public Group(string name)   //constuctor
+        {
+            Name = name;
+        }
+
+        public Artist this[int index]   //indexer
         {
             set
             {
@@ -31,7 +37,7 @@ namespace Labs.Lab1.IndTask
             }
         }
 
-        public IEnumerator<Artist> GetEnumerator()
+        public IEnumerator<Artist> GetEnumerator()  //enumerator
         {
             foreach (Artist x in members)
             {
@@ -39,17 +45,10 @@ namespace Labs.Lab1.IndTask
             }
         }
 
-        public string Name { set; get; }
-
-        public void Add(Artist artist)
+        public void Add(Artist artist)  //method for adding artistd to group
         {
             Array.Resize(ref members, members.Length + 1);
             members[members.Length - 1] = artist;
-        }
-
-        public Group(string name)
-        {
-            Name = name;
         }
 
         public override string ToString()
@@ -81,7 +80,7 @@ namespace Labs.Lab1.IndTask
             get { return EnrollYear; }
         }
 
-        public int getExp()
+        public int getExp()         //shows years since enrollment to the group
         {
             string enrollString = "01.01." + enrollYear;
             DateTime enrollDate = DateTime.Parse(enrollString);
