@@ -66,6 +66,14 @@ namespace Labs.Lab3.IndTask
             return res;
         }
 
+        public void sortBySurn() {
+            members.Sort(new CompArtBySurn<R,M>());
+        }
+
+        public void sortByExp() {
+            members.Sort(new CompArtByExp<R, M>());
+        }
+
         public override string ToString()
         {
             string res = Name + ":\nArtists\n";
@@ -263,6 +271,13 @@ namespace Labs.Lab3.IndTask
             //group output
             Console.WriteLine(ACDC);
 
+            Console.WriteLine("Sorted by surname: ");
+            ACDC.sortBySurn();
+            Console.WriteLine(ACDC);
+
+            Console.WriteLine("Sorted by experience: ");
+            ACDC.sortByExp();
+            Console.WriteLine(ACDC);
 
         }
 
@@ -283,6 +298,14 @@ namespace Labs.Lab3.IndTask
             ACDC += new Artist<string, string>("Chris", "Slade", "drummer", GB, 1988);
 
             //group output
+            Console.WriteLine(ACDC);
+
+            Console.WriteLine("Sorted by surname: ");
+            ACDC.sortBySurn();
+            Console.WriteLine(ACDC);
+
+            Console.WriteLine("Sorted by experience: ");
+            ACDC.sortByExp();
             Console.WriteLine(ACDC);
         }
     }
