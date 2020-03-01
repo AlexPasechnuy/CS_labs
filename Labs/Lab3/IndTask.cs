@@ -8,26 +8,25 @@ namespace Labs.Lab3.IndTask
     class CreativeTeam<R, M>
     {
         private string direction;
-        private Artist<R, M>[] members = new Artist<R, M>[0];
+        private List<Artist<R, M>> members = new List<Artist<R, M>>(0);
 
         public Artist<R, M> this[int index]   //indexer
         {
             set
             {
-                if (index < members.Length)
+                if (index < members.Count)
                 {
                     members[index] = value;
                 }
                 else
                 {
-                    Array.Resize(ref members, members.Length + 1);
-                    members[members.Length - 1] = value;
+                    members.Add(value);
                 }
             }
 
             get
             {
-                if (index < members.Length) { return members[index]; }
+                if (index < members.Count) { return members[index]; }
                 else { throw new IndexOutOfRangeException(); }
             }
         }
@@ -44,27 +43,26 @@ namespace Labs.Lab3.IndTask
 
         public int Length   //property for number of group members
         {
-            get { return members.Length; }
+            get { return members.Count; }
         }
 
         public CreativeTeam(string name, string direction)
         {
-            this.Name = name;
+            Name = name;
             this.direction = direction;
         }
 
         public static CreativeTeam<R, M> operator +(CreativeTeam<R, M> gr, Artist<R, M> ar)    //adding artist to the group
         {
             CreativeTeam<R, M> res = gr;
-            Array.Resize(ref res.members, res.members.Length + 1);
-            res.members[res.members.Length - 1] = ar;
+            res.members.Add(ar);
             return res;
         }
 
         public static CreativeTeam<R, M> operator -(CreativeTeam<R, M> gr, Artist<R, M> art)  //deleting artist from group
         {
             CreativeTeam<R, M> res = gr;
-            res.members = gr.members.Where(val => val != art).ToArray();
+            res.members = gr.members.Where(val => val != art).ToList();
             return res;
         }
 
@@ -283,8 +281,9 @@ namespace Labs.Lab3.IndTask
             ACDC += new Artist<string, string>("Angus", "Young", "guitarist", Scotl, 1973);
             ACDC += new Artist<string, string>("Stevie", "Young", "guitarist", USA, 1988);
             ACDC += new Artist<string, string>("Chris", "Slade", "drummer", GB, 1988);
-            
 
+            //group output
+            Console.WriteLine(ACDC);
         }
     }
 }
