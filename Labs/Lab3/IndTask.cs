@@ -47,6 +47,12 @@ namespace Labs.Lab3.IndTask
             get { return members.Length; }
         }
 
+        public CreativeTeam(string name, string direction)
+        {
+            this.Name = name;
+            this.direction = direction;
+        }
+
         public static CreativeTeam<R, M> operator +(CreativeTeam<R, M> gr, Artist<R, M> ar)    //adding artist to the group
         {
             CreativeTeam<R, M> res = gr;
@@ -60,12 +66,6 @@ namespace Labs.Lab3.IndTask
             CreativeTeam<R, M> res = gr;
             res.members = gr.members.Where(val => val != art).ToArray();
             return res;
-        }
-
-        public CreativeTeam(string name, string direction)
-        {
-            this.Name = name;
-            this.direction = direction;
         }
 
         public override string ToString()
@@ -241,8 +241,7 @@ namespace Labs.Lab3.IndTask
             CreativeTeam<Role, Mainland> ACDC = new Group<Role, Mainland>("AC/DC");
 
             //addition of artists using '+' operator
-            Artist<Role, Mainland> Axi = new Artist<Role, Mainland>("Axi", "Rose", soloist, USA, 2016);
-            ACDC += Axi;
+            ACDC += new Artist<Role, Mainland>("Axi", "Rose", soloist, USA, 2016);
             ACDC += new Artist<Role, Mainland>("Angus", "Young", guitarist, Scotl, 1973);
             ACDC += new Artist<Role, Mainland>("Stevie", "Young", guitarist, USA, 1988);
             ACDC += new Artist<Role, Mainland>("Chris", "Slade", drummer, GB, 1988);
@@ -250,38 +249,7 @@ namespace Labs.Lab3.IndTask
             //group output
             Console.WriteLine(ACDC);
 
-            //results of some search
-            Console.WriteLine("Artists from USA:");
-            foreach (Artist<Role, Mainland> art in ACDC)
-            {
-                if (art.Homeland == USA)
-                {
-                    Console.WriteLine(art);
-                }
-            }
 
-            Console.WriteLine("\n\nArtists with surname \"Young\":");
-            foreach (Artist<Role, Mainland> art in ACDC)
-            {
-                if (art.Surname == "Young")
-                {
-                    Console.WriteLine(art);
-                }
-            }
-
-            Console.WriteLine("\n\nArtists with names started by \"A\":");
-            foreach (Artist<Role, Mainland> art in ACDC)
-            {
-                if (art.Name.IndexOf("A") == 0)
-                {
-                    Console.WriteLine(art);
-                }
-            }
-
-            //Test of '-' operator
-            Console.WriteLine("\n\nAfter Axi deleting: ");
-            ACDC -= Axi;
-            Console.WriteLine(ACDC);
         }
 
         public static void usingStrings()
@@ -295,47 +263,12 @@ namespace Labs.Lab3.IndTask
             CreativeTeam<string, string> ACDC = new Group<string, string>("AC/DC");
 
             //addition of artists using '+' operator
-            Artist<string, string> Axi = new Artist<string, string>("Axi", "Rose", "soloist", USA, 2016);
-            ACDC += Axi;
+            ACDC += new Artist<string, string>("Axi", "Rose", "soloist", USA, 2016);
             ACDC += new Artist<string, string>("Angus", "Young", "guitarist", Scotl, 1973);
             ACDC += new Artist<string, string>("Stevie", "Young", "guitarist", USA, 1988);
             ACDC += new Artist<string, string>("Chris", "Slade", "drummer", GB, 1988);
+            
 
-            //group output
-            Console.WriteLine(ACDC);
-
-            //results of some search
-            Console.WriteLine("Artists from USA:");
-            foreach (Artist<string, string> art in ACDC)
-            {
-                if (art.Homeland == USA)
-                {
-                    Console.WriteLine(art);
-                }
-            }
-
-            Console.WriteLine("\n\nArtists with surname \"Young\":");
-            foreach (Artist<string, string> art in ACDC)
-            {
-                if (art.Surname == "Young")
-                {
-                    Console.WriteLine(art);
-                }
-            }
-
-            Console.WriteLine("\n\nArtists with names started by \"A\":");
-            foreach (Artist<string, string> art in ACDC)
-            {
-                if (art.Name.IndexOf("A") == 0)
-                {
-                    Console.WriteLine(art);
-                }
-            }
-
-            //Test of '-' operator
-            Console.WriteLine("\n\nAfter Axi deleting: ");
-            ACDC -= Axi;
-            Console.WriteLine(ACDC);
         }
     }
 }
