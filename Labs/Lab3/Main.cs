@@ -24,6 +24,7 @@ namespace Labs.Lab3
                     switch (num)
                     {
                         case 1:
+                            IndTask.Main.Run();
                             break;
                         case 2:
                             TextFiles.Main.Run();

@@ -61,6 +61,7 @@
     <Compile Include="Lab3\Container.cs" />
     <Compile Include="Lab3\FlexArr.cs" />
     <Compile Include="Lab3\GenLib.cs" />
+    <Compile Include="Lab3\IndTask.cs" />
     <Compile Include="Lab3\Main.cs" />
     <Compile Include="Lab3\Serial.cs" />
     <Compile Include="Lab3\Set.cs" />
