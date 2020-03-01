@@ -139,6 +139,22 @@ namespace Labs.Lab3.IndTask
         }
     }
 
+    class CompArtBySurn<R,M> : IComparer<Artist<R,M>>
+    {
+        public int Compare(Artist<R,M> r1, Artist<R,M> r2)
+        {
+            return r1.Surname.CompareTo(r2.Surname);
+        }
+    }
+
+    class CompArtByExp<R, M> : IComparer<Artist<R, M>>
+    {
+        public int Compare(Artist<R, M> r1, Artist<R, M> r2)
+        {
+            return r1.GetExp().CompareTo(r2.GetExp());
+        }
+    }
+
     class Country<T>
     {
         public string Name { set; get; }
