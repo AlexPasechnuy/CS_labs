@@ -1,111 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace Labs.Lab3.IndTask
 {
-
-    class CreativeTeam<R, M>
+    public struct Country
     {
-        private string direction;
-        private List<Artist<R, M>> members = new List<Artist<R, M>>(0);
-
-        public Artist<R, M> this[int index]   //indexer
-        {
-            set
-            {
-                if (index < members.Count)
-                {
-                    members[index] = value;
-                }
-                else
-                {
-                    members.Add(value);
-                }
-            }
-
-            get
-            {
-                if (index < members.Count) { return members[index]; }
-                else { throw new IndexOutOfRangeException(); }
-            }
-        }
-
-        public IEnumerator<Artist<R, M>> GetEnumerator()  //enumerator
-        {
-            foreach (Artist<R, M> x in members)
-            {
-                yield return x;
-            }
-        }
-
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name { set; get; }
 
-        public int Length   //property for number of group members
-        {
-            get { return members.Count; }
-        }
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Population { set; get; }
 
-        public CreativeTeam(string name, string direction)
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Area { set; get; }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Mainland { set; get; }
+
+        public Country(string name, int population, int area, string mainland)
         {
             Name = name;
-            this.direction = direction;
-        }
-
-        public static CreativeTeam<R, M> operator +(CreativeTeam<R, M> gr, Artist<R, M> ar)    //adding artist to the group
-        {
-            CreativeTeam<R, M> res = gr;
-            res.members.Add(ar);
-            return res;
-        }
-
-        public static CreativeTeam<R, M> operator -(CreativeTeam<R, M> gr, Artist<R, M> art)  //deleting artist from group
-        {
-            CreativeTeam<R, M> res = gr;
-            res.members = gr.members.Where(val => val != art).ToList();
-            return res;
-        }
-
-        public void sortBySurn() {
-            members.Sort(new CompArtBySurn<R,M>());
-        }
-
-        public void sortByExp() {
-            members.Sort(new CompArtByExp<R, M>());
+            Population = population;
+            Area = area;
+            Mainland = mainland;
         }
 
         public override string ToString()
         {
-            string res = Name + ":\nArtists\n";
-            foreach (Artist<R, M> art in members)
-            {
-                res += " -- " + art.ToString() + "\n";
-            }
-            return res;
+            return Name + "; Population: " + Population +
+                "; Area: " + Area + "; Mainland: " + Mainland;
         }
 
         public override bool Equals(object obj)
         {
-            CreativeTeam<R, M> team = obj as CreativeTeam<R, M>;
-            return team.direction == direction && team.Name == Name;
+            Country country = (Country)obj;
+            return country.Name == Name;
         }
     }
 
-    class Group<R, M> : CreativeTeam<R, M>
+    public class Artist<TCountry>
     {
-        public Group(string name) : base(name, "Music") { }
-    }
-
-    class Artist<R, M>
-    {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name { set; get; }
 
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Surname { set; get; }
 
-        public R Role { set; get; }
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Role { set; get; }
 
-        public Country<M> Homeland { set; get; }
+        [System.Xml.Serialization.XmlElement()]
+        public TCountry Homeland { set; get; }
 
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public int EnrollYear { set; get; }
 
         public int GetExp()     //show years since enrollment to the group
@@ -122,7 +72,10 @@ namespace Labs.Lab3.IndTask
             return ++years;
         }
 
-        public Artist(string name, string surname, R role, Country<M> homeland, int enrollYear)
+        //constructors
+        public Artist() { }
+
+        public Artist(string name, string surname, string role, TCountry homeland, int enrollYear)
         {
             Name = name;
             Surname = surname;
@@ -136,177 +89,213 @@ namespace Labs.Lab3.IndTask
             return "  " + Name + " " + Surname + ", " + Role + ", enrolled in " + EnrollYear
                 + "\nCountry: " + Homeland.ToString();
         }
+
         public override bool Equals(object obj)
         {
-            Artist<R, M> artist = obj as Artist<R, M>;
+            Artist<TCountry> artist = obj as Artist<TCountry>;
             return artist.Name == Name && artist.Surname == Surname
-                && artist.Role.Equals(Role) && artist.Homeland == Homeland
+                && artist.Role.Equals(Role) && artist.Homeland.Equals(Homeland)
                 && artist.EnrollYear == EnrollYear;
         }
     }
 
-    class CompArtBySurn<R,M> : IComparer<Artist<R,M>>
+    public class CreativeTeam<TCountry>
     {
-        public int Compare(Artist<R,M> r1, Artist<R,M> r2)
+        public List<Artist<TCountry>> Members { get; set; }
+
+        // Constructors
+        public CreativeTeam() { Members = new List<Artist<TCountry>>(0); }
+
+        public CreativeTeam(List<Artist<TCountry>> memb)
         {
-            return r1.Surname.CompareTo(r2.Surname);
+            Members = memb;
+        }
+
+        // Indexer
+        public Artist<TCountry> this[int index]
+        {
+            set
+            {
+                if (index < Members.Count)
+                {
+                    Members[index] = value;
+                }
+                else
+                {
+                    Members.Add(value);
+                }
+            }
+
+            get
+            {
+                if (index < Members.Count) { return Members[index]; }
+                else { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public IEnumerator<Artist<TCountry>> GetEnumerator()
+        {
+            foreach (Artist<TCountry> x in Members)
+            {
+                yield return x;
+            }
+        }
+
+        public static CreativeTeam<TCountry> operator +(CreativeTeam<TCountry> gr, Artist<TCountry> ar)    //adding artist to the group
+        {
+            CreativeTeam<TCountry> res = gr;
+            res.Members.Add(ar);
+            return res;
+        }
+
+        public static CreativeTeam<TCountry> operator -(CreativeTeam<TCountry> gr, Artist<TCountry> art)  //deleting artist from group
+        {
+            CreativeTeam<TCountry> res = gr;
+            res.Members = gr.Members.Where(val => val != art).ToList();
+            return res;
+        }
+
+        // Comparers
+        private class CompArtBySurn<TCountry> : IComparer<Artist<TCountry>>
+        {
+            public int Compare(Artist<TCountry> r1, Artist<TCountry> r2)
+            {
+                return r1.Surname.CompareTo(r2.Surname);
+            }
+        }
+
+        private class CompArtByExp<TCountry> : IComparer<Artist<TCountry>>
+        {
+            public int Compare(Artist<TCountry> r1, Artist<TCountry> r2)
+            {
+                return r1.GetExp().CompareTo(r2.GetExp());
+            }
+        }
+
+        // Sorting functions
+        public void sortBySurn()
+        {
+            Members.Sort(new CompArtBySurn<TCountry>());
+        }
+
+        public void sortByExp()
+        {
+            Members.Sort(new CompArtByExp<TCountry>());
+        }
+
+        // Serialization
+        public void SaveArtists(string filename)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Artist<TCountry>>));
+            using (TextWriter textWriter = new StreamWriter(filename))
+            {
+                serializer.Serialize(textWriter, Members);
+            }
+        }
+
+        // Deserialization
+        public void ReadArtists(string filename)
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(List<Artist<TCountry>>));
+            using (TextReader textReader = new StreamReader(filename))
+            {
+                Members = (List<Artist<TCountry>>)deserializer.Deserialize(textReader);
+            }
+        }
+
+        public override string ToString()
+        {
+            string res = "";
+            foreach (Artist<TCountry> art in Members)
+            {
+                res += " -- " + art.ToString() + "\n";
+            }
+            return res;
         }
     }
 
-    class CompArtByExp<R, M> : IComparer<Artist<R, M>>
+    public class Group<TCountry> : CreativeTeam<TCountry>
     {
-        public int Compare(Artist<R, M> r1, Artist<R, M> r2)
-        {
-            return r1.GetExp().CompareTo(r2.GetExp());
-        }
-    }
-
-    class Country<T>
-    {
-        public string Name { set; get; }
-
-        public int Population { set; get; }
-
-        public int Area { set; get; }
-
-        public T Mainland { set; get; }
-
-        public Country(string name, int population, int area, T mainland)
-        {
+        string Name { get; set; }
+        public Group() : base() { }
+        public Group(string name) : base() {
             Name = name;
-            Population = population;
-            Area = area;
-            Mainland = mainland;
         }
 
-        public override string ToString()
+        override public string ToString()
         {
-            return Name + "; Population: " + Population +
-                "; Area: " + Area + "; Mainland: " + Mainland;
+            return Name + "\n" + base.ToString();
         }
 
-        public override bool Equals(object obj)
+        public static Group<TCountry> operator +(Group<TCountry> gr, Artist<TCountry> art)    //adding artist to the group
         {
-            Country<T> country = obj as Country<T>;
-            return country.Name == Name;
+            Group<TCountry> newGrp = new Group<TCountry>(gr.Name)
+            {
+                Members =gr.Members
+            };
+            newGrp.Members.Add(art);
+            return newGrp;
+        }
+
+        public static Group<TCountry> operator -(Group<TCountry> gr, Artist<TCountry> art)  //deleting artist from group
+        {
+            Group<TCountry> newGrp = new Group<TCountry>(gr.Name)
+            {
+                Members = gr.Members
+            };
+            newGrp.Members.Remove(art);
+            return newGrp;
         }
     }
-
-    public struct Mainland
-    {
-        public string Name;
-        public long Area;
-
-        // Definition of the equivalence
-        public override bool Equals(object obj)
-        {
-            Mainland land = (Mainland)obj;
-            return land.Name == Name && land.Area == Area;
-        }
-
-        // Definition of string representation:
-        public override string ToString()
-        {
-            return Name + ", " + Area + " square kilemeters";
-        }
-    }
-
-    public struct Role
-    {
-        public string role;
-
-        // Definition of the equivalence
-        public override bool Equals(object obj)
-        {
-            Role newRole = (Role)obj;
-            return newRole.role == role;
-        }
-
-        // Definition of string representation:
-        public override string ToString()
-        {
-            return role;
-        }
-    }
-
 
     class Main
     {
         public static void Run()
         {
-            Console.WriteLine("Testing using structures: \n");
-            usingStructs();
-            Console.WriteLine("-----------------------------------" +
-                "--------------------------------------------------------\n");
-            Console.WriteLine("Testing using strings: \n");
-            usingStrings();
+            //countries creating
+            Country USA = new Country("United States of America", 328239523, 9833520, "North America");
+            Country GB = new Country("Great Britain", 63786000, 209331, "Europe");
+            Country Scotl = new Country("Scotland", 5424800, 77933, "Europe");
+
+            //group initialization
+            Group<Country> ACDC = new Group<Country>("AC/DC");
+
+            //addition of artists using '+' operator
+            ACDC += new Artist<Country>("Axi", "Rose", "soloist", USA, 2016);
+            ACDC += new Artist<Country>("Angus", "Young", "guitarist", Scotl, 1973);
+            ACDC += new Artist<Country>("Stevie", "Young", "guitarist", USA, 1988);
+            ACDC += new Artist<Country>("Chris", "Slade", "drummer", GB, 1988);
+
+            //group output
+            Console.WriteLine(ACDC);
+
+            ACDC.SaveArtists("Files/Lab3/IndTask/ACDC.xml");
+
+            Console.WriteLine("Sorted by surname: ");
+            ACDC.sortBySurn();
+            Console.WriteLine(ACDC);
+
+            Console.WriteLine("Sorted by experience: ");
+            ACDC.sortByExp();
+            Console.WriteLine(ACDC);
+
+            try
+            {
+                Group<Country> newACDC = new Group<Country>("newAC/DC");
+                newACDC.ReadArtists("Files/Lab3/IndTask/ACDC.xml");
+                Console.WriteLine("new AC/DC: ");
+                Console.WriteLine(newACDC);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("-----------Exception:-----------");
+                Console.WriteLine(ex.GetType());
+                Console.WriteLine("------------Message:------------");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("----------Stack Trace:----------");
+                Console.WriteLine(ex.StackTrace);
+            }
             Console.ReadKey();
-        }
-
-        public static void usingStructs()
-        {
-            //mainlands creating
-            Mainland Europe = new Mainland() { Name = "Europe", Area = 10180000 };
-            Mainland NorthAm = new Mainland() { Name = "North America", Area = 24710000 };
-
-            //roles creating
-            Role soloist = new Role() { role = "soloist" };
-            Role drummer = new Role() { role = "drummer" };
-            Role guitarist = new Role() { role = "guitarist" };
-
-            //countries creating
-            Country<Mainland> USA = new Country<Mainland>("United States of America", 328239523, 9833520, NorthAm);
-            Country<Mainland> GB = new Country<Mainland>("Great Britain", 63786000, 209331, Europe);
-            Country<Mainland> Scotl = new Country<Mainland>("Scotland", 5424800, 77933, Europe);
-
-            //group initialization
-            CreativeTeam<Role, Mainland> ACDC = new Group<Role, Mainland>("AC/DC");
-
-            //addition of artists using '+' operator
-            ACDC += new Artist<Role, Mainland>("Axi", "Rose", soloist, USA, 2016);
-            ACDC += new Artist<Role, Mainland>("Angus", "Young", guitarist, Scotl, 1973);
-            ACDC += new Artist<Role, Mainland>("Stevie", "Young", guitarist, USA, 1988);
-            ACDC += new Artist<Role, Mainland>("Chris", "Slade", drummer, GB, 1988);
-
-            //group output
-            Console.WriteLine(ACDC);
-
-            Console.WriteLine("Sorted by surname: ");
-            ACDC.sortBySurn();
-            Console.WriteLine(ACDC);
-
-            Console.WriteLine("Sorted by experience: ");
-            ACDC.sortByExp();
-            Console.WriteLine(ACDC);
-
-        }
-
-        public static void usingStrings()
-        {
-            //countries creating
-            Country<string> USA = new Country<string>("United States of America", 328239523, 9833520, "North America");
-            Country<string> GB = new Country<string>("Great Britain", 63786000, 209331, "Europe");
-            Country<string> Scotl = new Country<string>("Scotland", 5424800, 77933, "Europe");
-
-            //group initialization
-            CreativeTeam<string, string> ACDC = new Group<string, string>("AC/DC");
-
-            //addition of artists using '+' operator
-            ACDC += new Artist<string, string>("Axi", "Rose", "soloist", USA, 2016);
-            ACDC += new Artist<string, string>("Angus", "Young", "guitarist", Scotl, 1973);
-            ACDC += new Artist<string, string>("Stevie", "Young", "guitarist", USA, 1988);
-            ACDC += new Artist<string, string>("Chris", "Slade", "drummer", GB, 1988);
-
-            //group output
-            Console.WriteLine(ACDC);
-
-            Console.WriteLine("Sorted by surname: ");
-            ACDC.sortBySurn();
-            Console.WriteLine(ACDC);
-
-            Console.WriteLine("Sorted by experience: ");
-            ACDC.sortByExp();
-            Console.WriteLine(ACDC);
         }
     }
 }
