@@ -44,14 +44,12 @@
   <ItemGroup>
     <Compile Include="Lab1\AdvQuadrEq.cs" />
     <Compile Include="Lab1\EvenElems.cs" />
-    <Compile Include="Lab1\IndTask.cs" />
     <Compile Include="Lab1\Main.cs" />
     <Compile Include="Lab1\NullTypes.cs" />
     <Compile Include="Lab1\QuadrEq.cs" />
     <Compile Include="Lab2\ComplexNum.cs" />
     <Compile Include="Lab2\Equation.cs" />
     <Compile Include="Lab2\Hierarchy.cs" />
-    <Compile Include="Lab2\IndTask.cs" />
     <Compile Include="Lab2\Main.cs" />
     <Compile Include="Lab2\MathExp.cs" />
     <Compile Include="Lab2\StringExpansion.cs" />

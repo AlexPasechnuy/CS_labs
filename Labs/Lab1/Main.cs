@@ -9,11 +9,10 @@ namespace Labs.Lab1
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("1. Individual Task");
-                Console.WriteLine("2. Nullable types");
-                Console.WriteLine("3. Quadratic equation");
-                Console.WriteLine("4. Class for Representation of a Quadratic Equation (Advanced Task)");
-                Console.WriteLine("5. Working with Jagged Array\n");
+                Console.WriteLine("1. Nullable types");
+                Console.WriteLine("2. Quadratic equation");
+                Console.WriteLine("3. Class for Representation of a Quadratic Equation (Advanced Task)");
+                Console.WriteLine("4. Working with Jagged Array\n");
                 Console.WriteLine("Input number of task(-1 to return): ");
                 if (int.TryParse(Console.ReadLine(), out int num))
                 {
@@ -21,18 +20,15 @@ namespace Labs.Lab1
                     switch (num)
                     {
                         case 1:
-                            IndTask.Main.Run();
-                            break;
-                        case 2:
                             NullTypes.Main.Run();
                             break;
-                        case 3:
+                        case 2:
                             QuadrEq.Main.Run();
                             break;
-                        case 4:
+                        case 3:
                             AdvQuadrEq.Main.Run();
                             break;
-                        case 5:
+                        case 4:
                             EvenElems.Main.Run();
                             break;
                         case -1:
