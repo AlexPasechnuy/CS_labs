@@ -77,6 +77,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\IndTask\IndTask.csproj">
+      <Project>{64874436-3a57-40cd-a63a-af6d03d6f05a}</Project>
+      <Name>IndTask</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
