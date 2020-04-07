@@ -1,5 +1,6 @@
-ca
-cab
-acbc
-abccd
-abccde
+a
+ab
+abc
+abcd
+abcde
+abcdef

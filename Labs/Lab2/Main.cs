@@ -15,7 +15,7 @@ namespace Labs.Lab2
                 Console.WriteLine("4. Creation of Class \"Vector\"");
                 Console.WriteLine("5. Class Hierarchy");
                 Console.WriteLine("6. Roots of an Equation");
-                Console.WriteLine("7. 3D Point\n");
+                Console.WriteLine("7 . 3D Point\n");
                 Console.WriteLine("Input number of task('-1' to return): ");
                 if (int.TryParse(Console.ReadLine(), out int num))
                 {

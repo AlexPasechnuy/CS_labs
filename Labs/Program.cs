@@ -9,11 +9,14 @@ namespace Labs
             while (true)
             {
                 Console.Clear();
-                Console.Write("Enter number of lab(1-6)('-1' to quit): ");
+                Console.Write("Enter number of lab(1-6)('-1' to quit)('0' to quarantine tasks): ");
                 if (int.TryParse(Console.ReadLine(), out int num))
                 {
                     switch (num)
                     {
+                        case 0:
+                            QuaranTasks.Main.Run();
+                            break;
                         case 1:
                             Lab1.Main.Run();
                             break;

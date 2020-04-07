@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GroupOfCountry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Members>
-    <ArtistOfCountry Name="Axi" Surname="Rose" Role="soloist" EnrollYear="2016">
-      <Homeland Name="United States of America" Population="328239523" Area="9833520" Mainland="North America" />
-    </ArtistOfCountry>
-    <ArtistOfCountry Name="Angus" Surname="Young" Role="guitarist" EnrollYear="1973">
-      <Homeland Name="Scotland" Population="5424800" Area="77933" Mainland="Europe" />
-    </ArtistOfCountry>
-    <ArtistOfCountry Name="Stevie" Surname="Young" Role="guitarist" EnrollYear="1988">
-      <Homeland Name="United States of America" Population="328239523" Area="9833520" Mainland="North America" />
-    </ArtistOfCountry>
-    <ArtistOfCountry Name="Chris" Surname="Slade" Role="drummer" EnrollYear="1988">
-      <Homeland Name="Great Britain" Population="63786000" Area="209331" Mainland="Europe" />
-    </ArtistOfCountry>
-  </Members>
-</GroupOfCountry>
+<ArrayOfArtistOfCountry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArtistOfCountry Name="Axi" Surname="Rose" Role="soloist" EnrollYear="2016">
+    <Homeland Name="United States of America" Population="328239523" Area="9833520" Mainland="North America" />
+  </ArtistOfCountry>
+  <ArtistOfCountry Name="Angus" Surname="Young" Role="guitarist" EnrollYear="1973">
+    <Homeland Name="Scotland" Population="5424800" Area="77933" Mainland="Europe" />
+  </ArtistOfCountry>
+  <ArtistOfCountry Name="Stevie" Surname="Young" Role="guitarist" EnrollYear="1988">
+    <Homeland Name="United States of America" Population="328239523" Area="9833520" Mainland="North America" />
+  </ArtistOfCountry>
+  <ArtistOfCountry Name="Chris" Surname="Slade" Role="drummer" EnrollYear="1988">
+    <Homeland Name="Great Britain" Population="63786000" Area="209331" Mainland="Europe" />
+  </ArtistOfCountry>
+</ArrayOfArtistOfCountry>

@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Alex\\Documents\\1.University\\Programming\\C#\\CS_labs\\IndTask\\IndTask.csproj",
+      "projectUniqueName": "D:\\Alex\\Work\\Study\\Programming\\C#\\CS_labs\\IndTask\\IndTask.csproj",
       "projectName": "IndTask",
-      "projectPath": "D:\\Alex\\Documents\\1.University\\Programming\\C#\\CS_labs\\IndTask\\IndTask.csproj",
+      "projectPath": "D:\\Alex\\Work\\Study\\Programming\\C#\\CS_labs\\IndTask\\IndTask.csproj",
       "packagesPath": "C:\\Users\\AlexP\\.nuget\\packages\\",
-      "outputPath": "D:\\Alex\\Documents\\1.University\\Programming\\C#\\CS_labs\\IndTask\\obj\\",
+      "outputPath": "D:\\Alex\\Work\\Study\\Programming\\C#\\CS_labs\\IndTask\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
