@@ -30,6 +30,7 @@ namespace Labs.Lab4
                             FileSystem.Main.Run();
                             break;
                         case 4:
+                            Delegates.Main.Run();
                             break;
                         case 5:
                             break;

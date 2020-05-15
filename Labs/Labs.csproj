@@ -64,6 +64,7 @@
     <Compile Include="Lab3\Serial.cs" />
     <Compile Include="Lab3\Set.cs" />
     <Compile Include="Lab3\TextFiles.cs" />
+    <Compile Include="Lab4\Delegates.cs" />
     <Compile Include="Lab4\DynamicType.cs" />
     <Compile Include="Lab4\FileSystem.cs" />
     <Compile Include="Lab4\Main.cs" />

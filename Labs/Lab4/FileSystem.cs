@@ -1,9 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Labs.Lab4.FileSystem
 {
@@ -15,6 +11,7 @@ namespace Labs.Lab4.FileSystem
 
             Console.WriteLine("Directory: " + directory.FullName);
             foreach (FileInfo fileInfo in files)
+            {
                 if (fileInfo.Length > fileLength)
                 {
                     Console.WriteLine("Full name - " + fileInfo.FullName);
@@ -22,6 +19,7 @@ namespace Labs.Lab4.FileSystem
                     Console.WriteLine("Extension - " + fileInfo.Extension);
                     Console.WriteLine("Last write time - " + fileInfo.LastWriteTimeUtc);
                 }
+            }
         }
 
 
@@ -32,11 +30,14 @@ namespace Labs.Lab4.FileSystem
             DirectoryInfo[] directoryes = directory.GetDirectories();
 
             foreach (DirectoryInfo dirInfo in directoryes)
+            {
                 GetSubdirectoriesContent(dirInfo, fileLength);
+            }
         }
     }
 
-    public class Main {
+    public class Main
+    {
         public static void Run()
         {
             Console.WriteLine("Enter path to directory");
