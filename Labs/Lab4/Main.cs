@@ -27,6 +27,7 @@ namespace Labs.Lab4
                             DynamicType.Main.Run();
                             break;
                         case 3:
+                            FileSystem.Main.Run();
                             break;
                         case 4:
                             break;
