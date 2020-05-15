@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Labs</RootNamespace>
     <AssemblyName>Labs</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +71,13 @@
     <Compile Include="Lab4\DynamicType.cs" />
     <Compile Include="Lab4\FileSystem.cs" />
     <Compile Include="Lab4\Main.cs" />
+    <Compile Include="Lab4\Menus\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lab4\Menus\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab4\Menus\Main.cs" />
     <Compile Include="Lab5\Main.cs" />
     <Compile Include="Lab6\Main.cs" />
     <Compile Include="Program.cs" />
@@ -84,6 +94,12 @@
       <Project>{64874436-3a57-40cd-a63a-af6d03d6f05a}</Project>
       <Name>IndTask</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Lab4\Menus\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,6 +33,7 @@ namespace Labs.Lab4
                             Delegates.Main.Run();
                             break;
                         case 5:
+                            Menus.Main.Run();
                             break;
                         case 6:
                             break;
