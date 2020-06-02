@@ -16,3 +16,12 @@ D:\Alex\Work\Study\Programming\C#\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTa
 D:\Alex\Work\Study\Programming\C#\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.AssemblyInfo.cs
 D:\Alex\Work\Study\Programming\C#\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.dll
 D:\Alex\Work\Study\Programming\C#\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.pdb
+C:\Users\AlexP\Desktop\CS_labs\IndTask\bin\Debug\netstandard2.0\IndTask.deps.json
+C:\Users\AlexP\Desktop\CS_labs\IndTask\bin\Debug\netstandard2.0\IndTask.dll
+C:\Users\AlexP\Desktop\CS_labs\IndTask\bin\Debug\netstandard2.0\IndTask.pdb
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.csprojAssemblyReference.cache
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.csproj.CoreCompileInputs.cache
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.AssemblyInfoInputs.cache
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.AssemblyInfo.cs
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.dll
+C:\Users\AlexP\Desktop\CS_labs\IndTask\obj\Debug\netstandard2.0\IndTask.pdb

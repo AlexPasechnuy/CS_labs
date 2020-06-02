@@ -95,7 +95,9 @@
       <Name>IndTask</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Lab4\IndTask\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Lab4\Menus\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

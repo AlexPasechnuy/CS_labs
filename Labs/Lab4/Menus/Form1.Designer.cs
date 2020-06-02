@@ -42,9 +42,9 @@
             this.ResultTextBox = new System.Windows.Forms.TextBox();
             this.CheckBox = new System.Windows.Forms.CheckBox();
             this.comboBoxN = new System.Windows.Forms.ComboBox();
-            this.labelM = new System.Windows.Forms.Label();
-            this.labelN = new System.Windows.Forms.Label();
             this.Matrix = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Matrix)).BeginInit();
@@ -96,7 +96,7 @@
             // executeToolStripMenuItem
             // 
             this.executeToolStripMenuItem.Name = "executeToolStripMenuItem";
-            this.executeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.executeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.executeToolStripMenuItem.Text = "Execute";
             this.executeToolStripMenuItem.Click += new System.EventHandler(this.executeToolStripMenuItem_Click);
             // 
@@ -118,18 +118,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBoxM);
             this.panel1.Controls.Add(this.ResultLabel);
             this.panel1.Controls.Add(this.ResultTextBox);
             this.panel1.Controls.Add(this.CheckBox);
             this.panel1.Controls.Add(this.comboBoxN);
-            this.panel1.Controls.Add(this.labelM);
-            this.panel1.Controls.Add(this.labelN);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 56);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboBoxM
             // 
@@ -146,7 +147,7 @@
             "8",
             "9",
             "10"});
-            this.comboBoxM.Location = new System.Drawing.Point(132, 17);
+            this.comboBoxM.Location = new System.Drawing.Point(178, 19);
             this.comboBoxM.Name = "comboBoxM";
             this.comboBoxM.Size = new System.Drawing.Size(60, 21);
             this.comboBoxM.TabIndex = 7;
@@ -172,7 +173,7 @@
             // CheckBox
             // 
             this.CheckBox.AutoSize = true;
-            this.CheckBox.Location = new System.Drawing.Point(229, 19);
+            this.CheckBox.Location = new System.Drawing.Point(357, 21);
             this.CheckBox.Name = "CheckBox";
             this.CheckBox.Size = new System.Drawing.Size(151, 17);
             this.CheckBox.TabIndex = 4;
@@ -194,29 +195,11 @@
             "8",
             "9",
             "10"});
-            this.comboBoxN.Location = new System.Drawing.Point(33, 17);
+            this.comboBoxN.Location = new System.Drawing.Point(90, 19);
             this.comboBoxN.Name = "comboBoxN";
             this.comboBoxN.Size = new System.Drawing.Size(60, 21);
             this.comboBoxN.TabIndex = 2;
             this.comboBoxN.SelectedIndexChanged += new System.EventHandler(this.CheakedChanged);
-            // 
-            // labelM
-            // 
-            this.labelM.AutoSize = true;
-            this.labelM.Location = new System.Drawing.Point(110, 20);
-            this.labelM.Name = "labelM";
-            this.labelM.Size = new System.Drawing.Size(16, 13);
-            this.labelM.TabIndex = 1;
-            this.labelM.Text = "M";
-            // 
-            // labelN
-            // 
-            this.labelN.AutoSize = true;
-            this.labelN.Location = new System.Drawing.Point(12, 20);
-            this.labelN.Name = "labelN";
-            this.labelN.Size = new System.Drawing.Size(15, 13);
-            this.labelN.TabIndex = 0;
-            this.labelN.Text = "N";
             // 
             // Matrix
             // 
@@ -228,6 +211,27 @@
             this.Matrix.Name = "Matrix";
             this.Matrix.Size = new System.Drawing.Size(800, 520);
             this.Matrix.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(3, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Dimensions";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(156, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "x";
             // 
             // FormMatrix
             // 
@@ -258,13 +262,13 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBoxN;
-        private System.Windows.Forms.Label labelM;
-        private System.Windows.Forms.Label labelN;
         private System.Windows.Forms.CheckBox CheckBox;
         private System.Windows.Forms.TextBox ResultTextBox;
         private System.Windows.Forms.Label ResultLabel;
         private System.Windows.Forms.DataGridView Matrix;
         private System.Windows.Forms.ComboBox comboBoxM;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

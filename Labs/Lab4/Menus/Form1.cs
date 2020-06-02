@@ -81,5 +81,15 @@ namespace Labs.Lab4.Menus
         {
             MessageBox.Show("Program for searcing the sum of product of rows");
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
