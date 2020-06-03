@@ -18,7 +18,7 @@ namespace QuaranTasks
                     switch (num)
                     {
                         case 1:
-                            Martices.Main.Run();
+                            Matrices.Main.Run();
                             break;
                         case 2:
                             Functions.Main.Run();
