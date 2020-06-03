@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs", "Labs\Labs.csproj", "{3B0E0D3A-E08E-4CE3-8C14-FF9DC3998200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndTask", "IndTask\IndTask.csproj", "{64874436-3A57-40CD-A63A-AF6D03D6F05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndTask", "IndTask\IndTask.csproj", "{64874436-3A57-40CD-A63A-AF6D03D6F05A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuaranTasks", "QuaranTasks\QuaranTasks.csproj", "{35930F34-C99F-4F8A-AF54-84BFEE3971BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{64874436-3A57-40CD-A63A-AF6D03D6F05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64874436-3A57-40CD-A63A-AF6D03D6F05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64874436-3A57-40CD-A63A-AF6D03D6F05A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35930F34-C99F-4F8A-AF54-84BFEE3971BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35930F34-C99F-4F8A-AF54-84BFEE3971BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35930F34-C99F-4F8A-AF54-84BFEE3971BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35930F34-C99F-4F8A-AF54-84BFEE3971BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

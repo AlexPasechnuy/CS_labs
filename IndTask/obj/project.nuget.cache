@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "EfSsBvt0ANOdgk01BRAiMs0irE59pydAcTassCq7Aawocwb5WuHrCzCmOWbOME+iCQKZSaY+VfKPZv7Zju7CVA==",
+  "success": true,
+  "projectFilePath": "D:\\Alex\\Work\\Study\\Programming\\C#\\CS_labs\\IndTask\\IndTask.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

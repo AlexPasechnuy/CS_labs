@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+LZIpc9sggh3wxRHBq9wcJONMNIWiGGNOczTjV5wKfVXw/73Swsbtxy42Ex0qWVJQJnugv3ldriw041Ty+1STw==",
+  "success": true,
+  "projectFilePath": "D:\\Alex\\Work\\Study\\Programming\\C#\\CS_labs\\QuaranTasks\\QuaranTasks.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AlexP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

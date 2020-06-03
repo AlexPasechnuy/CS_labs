@@ -1,0 +1,13 @@
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.csprojAssemblyReference.cache
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.AssemblyInfoInputs.cache
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.AssemblyInfo.cs
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.csproj.CoreCompileInputs.cache
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.exe
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.deps.json
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.runtimeconfig.json
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.runtimeconfig.dev.json
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.dll
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\bin\Debug\netcoreapp3.1\QuaranTasks.pdb
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.dll
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.pdb
+D:\Alex\Work\Study\Programming\C#\CS_labs\QuaranTasks\obj\Debug\netcoreapp3.1\QuaranTasks.genruntimeconfig.cache
