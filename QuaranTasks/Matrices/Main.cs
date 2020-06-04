@@ -42,15 +42,15 @@ namespace QuaranTasks.Matrices
             //arrays printing
             Console.WriteLine("A:\n" + a + "B:\n" + b + "C:\n" + c + "D:\n" + d);
             //printing of determinants
-            Console.WriteLine("Determinant of A: " + a.Deter +
-                "\nDeterminant of B: " + b.Deter +
-                "\nDeterminant of C: " + c.Deter +
-                "\nDeterminant of D: " + d.Deter);
+            Console.WriteLine("Determinant of A: " + a.Determinant() +
+                "\nDeterminant of B: " + b.Determinant() +
+                "\nDeterminant of C: " + c.Determinant() +
+                "\nDeterminant of D: " + d.Determinant());
             //matrices multiplication
             Console.Write("\nA*B:\n" + a * b);
             Console.WriteLine("\nC*D:\n" + c * d);
             //inversed matrices
-            JaggedMatrix inv = a.InverseMatrix();
+            AbstrSquareMatrix inv = a.InverseMatrix();
             Console.WriteLine("Inversed A:\n" + inv);
             Console.WriteLine("Inversed A * A:\n" + (inv * a));
             inv = b.InverseMatrix();
@@ -113,15 +113,15 @@ namespace QuaranTasks.Matrices
             //arrays printing
             Console.WriteLine("A:\n" + a + "B:\n" + b + "C:\n" + c + "D:\n" + d);
             //printing of determinants
-            Console.WriteLine("Determinant of A: " + a.Deter +
-                "\nDeterminant of B: " + b.Deter +
-                "\nDeterminant of C: " + c.Deter +
-                "\nDeterminant of D: " + d.Deter);
+            Console.WriteLine("Determinant of A: " + a.Determinant() +
+                "\nDeterminant of B: " + b.Determinant() +
+                "\nDeterminant of C: " + c.Determinant() +
+                "\nDeterminant of D: " + d.Determinant());
             //matrices multiplication
             Console.Write("\nA*B:\n" + a * b);
             Console.WriteLine("\nC*D:\n" + c * d);
             //inversed matrices
-            OrdinaryMatrix inv = a.InverseMatrix();
+            AbstrSquareMatrix inv = a.InverseMatrix();
             Console.WriteLine("Inversed A:\n" + inv);
             Console.WriteLine("Inversed A * A:\n" + (inv * a));
             inv = b.InverseMatrix();
@@ -167,7 +167,5 @@ namespace QuaranTasks.Matrices
             TestJagged();
             Console.ReadKey();
         }
-
-
     }
 }

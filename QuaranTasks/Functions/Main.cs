@@ -15,7 +15,6 @@ namespace QuaranTasks.Functions
                 string tempStr = "";
                 for (int j = 0; j < src.GetLength(1); j++)
                 {
-                    //Console.Write(Math.Round(src[i, j], 2) + " ");
                     tempStr += Math.Round(src[i, j], 2);
                     int lngth = tempStr.Length;
                     for (int k = 0; k < (j + 1) * 10 - lngth + j; k++) { tempStr += " "; }

@@ -17,29 +17,19 @@ namespace QuaranTasks.Matrices
             this.matrix = matrix;
         }
 
-        public OrdinaryMatrix(int n)
+        public AbstrSquareMatrix InverseMatrix()
         {
-            this.matrix = new double[n, n];
-        }
-
-        public OrdinaryMatrix InverseMatrix()
-        {
-            return new OrdinaryMatrix(AbstrSquareMatrix.GaussInverse(matrix));
+            return base.InverseMatrix();
         }
 
         public override AbstrSquareMatrix Create(int n)
         {
-            return new JaggedMatrix(n);
+            return new OrdinaryMatrix(new double[n, n]);
         }
 
         public override int N
         {
             get { return matrix.GetLength(0); }
-        }
-
-        public override double Deter
-        {
-            get { return GetDeter(matrix); }
         }
 
         public override ref double Get(int i, int j)
